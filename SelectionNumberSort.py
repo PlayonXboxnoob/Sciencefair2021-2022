@@ -43,4 +43,3 @@ def SelectionSort(arr):
     print(str(timetaken) + "seconds")
     return arr
 
-SelectionSort(RandN(1, 1000, 100000))

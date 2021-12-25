@@ -21,24 +21,14 @@ def bubbleSort(arr):
     start = time.time()
     n = len(arr)
 
-    # Traverse through all array elements
-    for i in range(n):
-        swapped = False
+    for i in range(n): # n is the length of the array
+        swapped = False #It has not swapped anything yet
 
-        # Last i elements are already
-        #  in place
-        for j in range(0, n - i - 1):
+        for j in range(0, n-i-1):
 
-            # traverse the array from 0 to
-            # n-i-1. Swap if the element
-            # found is greater than the
-            # next element
-            if arr[j] > arr[j + 1]:
-                arr[j], arr[j + 1] = arr[j + 1], arr[j]
+            if arr[j] > arr[j+1]: # comparing the first value to the second, and swapping if greater than
+                arr[j], arr[j+1] = arr[j+1], arr[j]
                 swapped = True
-
-        # IF no two elements were swapped
-        # by inner loop, then break
         if swapped == False:
             break
     end = time.time()
@@ -46,8 +36,12 @@ def bubbleSort(arr):
     print("Sorted array:")
     print(arr)
     timetaken = end-start
-    print("The time it took to sort was : ")
+    print("The time it took to sort was: ")
     print(str(timetaken) + "seconds")
     return arr
 
-bubbleSort(RandN(1, 1000, 100000))
+bubbleSort(RandN(1, 10, 5))
+
+
+
+
