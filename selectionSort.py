@@ -11,20 +11,19 @@ import RandModule
 import threading as th
 from Verify import *
 
+def selectionSort(arr):
+    n = range(0, len(arr) - 1)
 
-def bubbleSort(arr, ascendio=True):
-    n = len(arr)
+    for i in n:
+        low = i
 
-    for passes in range(n):
+        for j in range(i + 1, len(arr)):
+            if arr[j] < arr[low]:
+                low = j
 
-        for i in range(n-passes-1):
+        if low != i:
+            arr[low], arr[i] = arr[i], arr[low]
 
-            if ascendio:
-                if arr[i] > arr[i+1]:
-                    arr[i], arr[i+1] = arr[i+1], arr[i]
-            else:
-                if arr[i] < arr[i+1]:
-                    arr[i], arr[i+1] = arr[i+1], arr[i]
 
     return arr
 
@@ -32,7 +31,8 @@ if __name__ == '__main__':
     arr = RandN(1, 100, 10)
     print(arr)
     sorterdArray = arr.copy()
-    sorterdArray = bubbleSort(sorterdArray)
+    sorterdArray = selectionSort(sorterdArray)
     print(sorterdArray)
     print(str(verify(arr, sorterdArray)))
     print(arr)
+

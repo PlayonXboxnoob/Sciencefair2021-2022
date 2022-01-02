@@ -1,4 +1,3 @@
-import sys
 import random
 import time
 from time import sleep
@@ -11,20 +10,16 @@ import RandModule
 import threading as th
 from Verify import *
 
+def insertionSort(arr):
+    n = range(1, len(arr))
+    for i in n:
 
-def bubbleSort(arr, ascendio=True):
-    n = len(arr)
+        sortval = arr[i]
 
-    for passes in range(n):
+        while arr[i-1] > sortval and i > 0:
 
-        for i in range(n-passes-1):
-
-            if ascendio:
-                if arr[i] > arr[i+1]:
-                    arr[i], arr[i+1] = arr[i+1], arr[i]
-            else:
-                if arr[i] < arr[i+1]:
-                    arr[i], arr[i+1] = arr[i+1], arr[i]
+            arr[i], arr[i-1] = arr[i-1], arr[i]
+            i = i-1
 
     return arr
 
@@ -32,7 +27,10 @@ if __name__ == '__main__':
     arr = RandN(1, 100, 10)
     print(arr)
     sorterdArray = arr.copy()
-    sorterdArray = bubbleSort(sorterdArray)
+    sorterdArray = insertionSort(sorterdArray)
     print(sorterdArray)
     print(str(verify(arr, sorterdArray)))
     print(arr)
+
+
+

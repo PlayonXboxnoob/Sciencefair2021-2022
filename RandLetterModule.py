@@ -4,8 +4,6 @@ import time
 from time import sleep
 import string
 
-global rw
-
 def RandL(Llimit, Letters):
     rw = RandomWord(Letters, True)
     RandomI_ListOfLetters = rw.getList(Llimit)
