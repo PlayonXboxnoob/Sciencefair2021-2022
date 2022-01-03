@@ -10,13 +10,15 @@ from quickSort import *
 from insertionSort import *
 from Verify import *
 
-def test(totest):
-
-    alglist = {'bubble': bubbleSort,
+alglist = {'quick': quickSort,
+    'bubble': bubbleSort,
                'selection': selectionSort,
                'insertion': insertionSort,
-               'quick': quickSort,
+
                'comb': combSort}
+
+def test(totest):
+
 
     timeTakenList = []
 
@@ -41,11 +43,18 @@ def test(totest):
     return timeTakenList
 
 if __name__ == '__main__':
-    timeList = []
-    for i in range(10):
-        timeArr = test('quick')
-        timeList.append(timeArr)
 
-    print(timeList)
+    for key in alglist.keys():
+
+        f = open('output ' + key + 'sort.txt', 'w')
+
+        for i in range(1):
+            timeArr = test(key)
+            s = ''
+            for t in timeArr:
+                s += str(t) + ', '
+            f.write(s)
+
+        f.close()
 
 
