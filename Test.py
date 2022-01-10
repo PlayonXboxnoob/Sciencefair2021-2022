@@ -11,11 +11,12 @@ from insertionSort import *
 from Verify import *
 
 alglist = {
-#    'bubble': bubbleSort,
+    'bubble': bubbleSort,
                'selection': selectionSort,
-               'insertion': insertionSort,
+               'insertion': insertionSort
 
-               'comb': combSort}
+               #'comb': combSort
+        }
 #'quick': quickSort,
 
 def test(totest):
@@ -23,7 +24,7 @@ def test(totest):
 
     timeTakenList = []
 
-    testList = [[1, 10000, 1000], [1, 100000, 10000], [1, 1000000, 100000], [1, 10000000, 1000000], [1, 2000000000, 100000000]]
+    testList = [[1, 10000, 1000], [1, 100000, 10000], [1, 1000000, 100000]]#, [1, 10000000, 1000000], [1, 2000000000, 100000000]]
     for testToRun in testList:
         unsortedArray = RandN(testToRun[0], testToRun[1], testToRun[2])
 
