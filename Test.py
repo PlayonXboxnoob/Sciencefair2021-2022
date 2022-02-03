@@ -18,7 +18,7 @@ alglist = {
     'comb': combSort
           }
 
-oodef runTest(totest, testList):
+def runTest(totest, testList):
 
 
     timeTakenList = []
