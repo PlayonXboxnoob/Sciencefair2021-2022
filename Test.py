@@ -2,6 +2,7 @@ import random
 import time
 from time import sleep
 import string
+from datetime import datetime
 from RandModule import *
 from selectionSort import *
 from bubbleSort import *
@@ -9,12 +10,12 @@ from CombNumberSort import *
 from quickSort import *
 from insertionSort import *
 from Verify import *
-from datetime import datetime
 
-alglist = {
 #    'bubble': bubbleSort,
 #    'selection': selectionSort,
 #    'insertion': insertionSort,
+
+alglist = {
     'quick': quickSort,
     'comb': combSort
           }
@@ -62,7 +63,7 @@ if __name__ == '__main__':
         fOp = open('number of operations ' + key + 'sort.txt', 'w')
         s = ''
         for test in testList:
-            s = str(test[2]) + ','
+            s += str(test[2]) + ','
 
         f.write(s)
         fOp.write(s)
@@ -79,10 +80,11 @@ if __name__ == '__main__':
 
             s = ''
             for p in opArr:
-                s += str(t) + ', '
-            f.write(s)
-            f.write('\n')
+                s += str(p) + ', '
+            fOp.write(s)
+            fOp.write('\n')
 
         f.close()
+        fOp.close()
 
 
