@@ -11,14 +11,13 @@ from quickSort import *
 from insertionSort import *
 from Verify import *
 
-#    'bubble': bubbleSort,
-#    'selection': selectionSort,
-#    'insertion': insertionSort,
-
 alglist = {
     'quick': quickSort,
-    'comb': combSort
-          }
+    'comb': combSort,
+    'bubble': bubbleSort,
+    'selection': selectionSort,
+    'insertion': insertionSort
+}
 
 testList = [[1, 10000, 1000], [1, 10000, 5000], [1, 100000, 10000], [1, 1000000, 50000], [1, 10000000, 100000],
             [1, 1000000, 200000], [1, 1000000, 300000]]
