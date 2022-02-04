@@ -10,6 +10,7 @@ numOperations = 0
 
 def quickSort(arr):
     global numOperations
+    numOperations = 0
     return quickSortInner(arr), numOperations
 
 def quickSortInner(arr):
