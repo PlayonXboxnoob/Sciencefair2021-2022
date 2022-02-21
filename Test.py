@@ -22,7 +22,7 @@ alglist = {
 testList = [[1, 10000, 1000], [1, 10000, 5000], [1, 100000, 10000], [1, 1000000, 50000], [1, 10000000, 100000],
             [1, 1000000, 200000], [1, 1000000, 300000]]
 
-testCount = 3
+testCount = 10
 
 def runTest(totest, testList):
 
@@ -56,12 +56,12 @@ def runTest(totest, testList):
 
 if __name__ == '__main__':
 
-    for key in alglist.keys():
+    for key in alglist.keys(): # run for each sorting method
 
-        f = open('output ' + key + 'sort.txt', 'w')
-        fOp = open('number of operations ' + key + 'sort.txt', 'w')
+        f = open('output ' + key + 'sort.txt', 'w') # file to store the time
+        fOp = open('number of operations ' + key + 'sort.txt', 'w') # files to store number of comparisons
         s = ''
-        for test in testList:
+        for test in testList:   # first write the test number in the files
             s += str(test[2]) + ','
 
         f.write(s)
@@ -69,16 +69,16 @@ if __name__ == '__main__':
         f.write('\n')
         fOp.write('\n')
 
-        for i in range(testCount):
+        for i in range(testCount):  # write test data in the files
             timeArr, opArr = runTest(key, testList)
             s = ''
-            for t in timeArr:
+            for t in timeArr:   # write time for sorting in the file
                 s += str(t) + ', '
             f.write(s)
             f.write('\n')
 
             s = ''
-            for p in opArr:
+            for p in opArr: # write number of comparisons in the file
                 s += str(p) + ', '
             fOp.write(s)
             fOp.write('\n')
