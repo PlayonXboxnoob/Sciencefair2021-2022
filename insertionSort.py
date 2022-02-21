@@ -12,9 +12,9 @@ from Verify import *
 def insertionSort(arr):
     n = range(1, len(arr))
     numOp = 0
-    for i in n:
+    for i in n: # loop over the list
 
-        sortval = arr[i]
+        sortval = arr[i]    # take current number and place it in right position in the list
 
         while arr[i-1] > sortval and i > 0:
             numOp += 1
